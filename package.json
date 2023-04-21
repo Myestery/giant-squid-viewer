@@ -1,6 +1,6 @@
 {
   "name": "@myestery/giant-squid-viewer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Giant Squid Viewer for polkadot using the giant squid graphql endpoints and rpc of the chains",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
