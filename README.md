@@ -30,7 +30,18 @@ render(<App />, document.getElementById('root'));
 
 | Prop | Type | Description |
 | --- | --- | --- |
-| data | object | Giant Squid data |
+| coins | array | array of coins to display |
+
+## Styles
+
+The viewer uses [tailwindcss](https://tailwindcss.com/) for styling. You can override the default styles by including your own tailwind config file in your project.
+
+If you do not use tailwind, the extracted styles can be found in `styles/index.css`.
+
+### Link
+ 
+[https://raw.githubusercontent.com/Myestery/giant-squid-viewer/main/styles/index.css](https://raw.githubusercontent.com/Myestery/giant-squid-viewer/main/styles/index.css)
+
 
 ## Development
 
