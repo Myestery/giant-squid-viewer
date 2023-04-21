@@ -14,17 +14,12 @@ npm install @myestery/giant-squid-viewer
 ```jsx
 import React from 'react';
 import { render } from 'react-dom';
-import { GiantSquidViewer } from 'giant-squid-viewer';
+import { Viewer } from '@myestery/giant-squid-viewer';
+const coins = ['polkadot']
 
 const App = () => {
   return (
-    <GiantSquidViewer
-      data={data}
-      width={800}
-      height={600}
-      onHover={console.log}
-      onClick={console.log}
-    />
+    <Viewer coins={coins} />
   );
 };
 

@@ -22,5 +22,7 @@
       "esModuleInterop": true,
       "skipLibCheck": true,
       "forceConsistentCasingInFileNames": true,
+      // add css folder
+      
     }
   }

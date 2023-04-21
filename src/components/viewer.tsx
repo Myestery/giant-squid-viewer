@@ -1,3 +1,5 @@
+import '../../styles/index.css'
+
 import { GSCoin, GSCoinsMap } from "../types/coins";
 
 import { ApolloProvider } from "@apollo/client";
