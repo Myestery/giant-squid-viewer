@@ -73,7 +73,7 @@ export function CoinCard(props: PropsWithChildren<Props>) {
     <div className='border-2 border-white rounded-lg px-2 py-4 shadow-sm hover:shadow-2xl hover:border-[3px]  transition-shadow duration-500 transition-[border-width]'>
       {/* <div className='px-2 grid grid-cols-2'> */}
       <div className='flex px-2 justify-center'>
-        <img src={props.coin.logo} className='rounded-xl'  alt={props.coin + " logo"} />
+        <img src={props.coin.logo} className='rounded-xl w-[144px] h-[144px]'  alt={props.coin.name + " logo"} />
         {/* <div></div> */}
       </div>
       <div className='text-xl px-2 py-2 font-medium text-center'>

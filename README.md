@@ -32,6 +32,17 @@ render(<App />, document.getElementById('root'));
 | --- | --- | --- |
 | coins | array | array of coins to display |
 
+## Coins
+
+Valid coins are:
+
+```bash
+["polkadot","kusama","moonbeam","moonriver","acala","karura","statemine","statemint","astar","shiden","shibuya","bifrost","khala","phala","calamari","gm","subsocial","efinity","rococo","interlay","hydraDX"]
+```
+as seen in [https://docs.subsquid.io/giant-squid-api/statuses/](https://docs.subsquid.io/giant-squid-api/statuses/)
+
+Leave an empty array to see all coins.
+
 ## Styles
 
 The viewer uses [tailwindcss](https://tailwindcss.com/) for styling. You can override the default styles by including your own tailwind config file in your project.

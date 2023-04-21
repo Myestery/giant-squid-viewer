@@ -533,6 +533,14 @@ video {
   display: grid;
 }
 
+.h-\[144px\] {
+  height: 144px;
+}
+
+.w-\[144px\] {
+  width: 144px;
+}
+
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }

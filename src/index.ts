@@ -1,5 +1,5 @@
-import '../../styles/index.module.css'
+// import "../../styles/index.module.css";
 
-import Viewer from './components/viewer'
+import Viewer from "./components/viewer";
 
-export { Viewer }
+export { Viewer };
