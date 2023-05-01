@@ -151,7 +151,7 @@ export const GSCoinsMap: Record<GSCoin, GSCoinProps> = {
   },
   gm: {
     name: "GM",
-    ws: "wss://gmordie.api.onfinality.io/public-ws",
+    ws: "wss://ws.gm.bldnodes.org",
     logo: "https://raw.githubusercontent.com/subsquid/archive-registry/main/ui/logos/networks/gmordie.png",
     chainId: 0,
     iseth: false,
