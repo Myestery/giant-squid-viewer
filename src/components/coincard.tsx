@@ -114,7 +114,7 @@ export function CoinCard(props: PropsWithChildren<Props>) {
             className={`${
               data?.squidStatus.height ? "text-green-400" : "text-yellow-400"
             } mx-2 text-sm lowercase`}>
-            {loading ? "Connecting" : error ? "Error" : "Connected"}
+            {loading ? "Connecting" : error ? "Inactive" : "Active"}
           </span>
         </div>
       </div>
