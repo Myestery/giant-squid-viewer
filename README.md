@@ -13,17 +13,15 @@ npm install @myestery/giant-squid-viewer
 
 ```jsx
 import React from 'react';
-import { render } from 'react-dom';
+import "@myestery/giant-squid-viewer/styles/index.css";
 import { Viewer } from '@myestery/giant-squid-viewer';
 const coins = ['polkadot']
 
 const App = () => {
   return (
-    <Viewer coins={coins} />
+    <Viewer coins={coins} pollInterval={1000} />
   );
 };
-
-render(<App />, document.getElementById('root'));
 ```
 
 ## Props
@@ -31,6 +29,7 @@ render(<App />, document.getElementById('root'));
 | Prop | Type | Description |
 | --- | --- | --- |
 | coins | array | array of coins to display |
+| pollInterval | integer | Frequency of update in milliseconds |
 
 ## Coins
 
@@ -45,14 +44,7 @@ Leave an empty array to see all coins.
 
 ## Styles
 
-The viewer uses [tailwindcss](https://tailwindcss.com/) for styling. You can override the default styles by including your own tailwind config file in your project.
-
-If you do not use tailwind, the extracted styles can be found in `styles/index.css`.
-
-### Link
- 
-[https://raw.githubusercontent.com/Myestery/giant-squid-viewer/main/styles/index.css](https://raw.githubusercontent.com/Myestery/giant-squid-viewer/main/styles/index.css)
-
+The viewer uses [tailwindcss](https://tailwindcss.com/) for styling. You will need to import the styles as shown in the description above
 
 ## Development
 
