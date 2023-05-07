@@ -18,6 +18,10 @@ beforeEach(() => {
 });
 describe("Common render", () => {
   it("renders without crashing", async() => {
-    await act( async () => render(<Viewer coins={[]} />));
+    await act( async () => render(<Viewer coins={[]} pollInterval={1000} />));
   });
+  
+  // it doesnt throw error with poor network
+  // it("renders without crashing with poor network", async () => {
+    
 });

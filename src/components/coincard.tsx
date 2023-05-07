@@ -9,6 +9,8 @@ import { useQuery } from "@apollo/client";
 
 export interface Props {
   coin: GSCoinProps;
+  /**interval in milliseconds */
+  pollInterval: number;
 }
 export function CoinCard(props: PropsWithChildren<Props>) {
   const [blockNumber, setBlockNumber] = useState(0);
@@ -28,25 +30,29 @@ export function CoinCard(props: PropsWithChildren<Props>) {
         }
       | undefined;
   } = useQuery(GET_INDEXED_BLOCKS, {
-    pollInterval: 500,
+    pollInterval: props.pollInterval || 1000,
   });
   useEffect(() => {
     if (props.coin.iseth) {
-      const providerRPC = {
-        [props.coin.name]: {
-          name: props.coin.name,
-          rpc: props.coin.ws, // Insert your RPC URL here
-          chainId: props.coin.chainId, // 0x504 in hex,
-        },
-      };
-      const provider = new ethers.WebSocketProvider(
-        providerRPC[props.coin.name].rpc,
-        {
-          chainId: providerRPC[props.coin.name].chainId,
-          name: providerRPC[props.coin.name].name,
-        }
-      );
-      provider.on("block", (id) => setBlockNumber(id));
+      try {
+        const providerRPC = {
+          [props.coin.name]: {
+            name: props.coin.name,
+            rpc: props.coin.ws, // Insert your RPC URL here
+            chainId: props.coin.chainId, // 0x504 in hex,
+          },
+        };
+        const provider = new ethers.WebSocketProvider(
+          providerRPC[props.coin.name].rpc,
+          {
+            chainId: providerRPC[props.coin.name].chainId,
+            name: providerRPC[props.coin.name].name,
+          }
+        );
+        provider.on("block", (id) => setBlockNumber(id));
+      } catch (err) {
+        console.error("Error connecting to evm rpc")
+     }
     } else {
       const wsProvider = new WsProvider(props.coin.ws);
       (async () => {
@@ -54,11 +60,13 @@ export function CoinCard(props: PropsWithChildren<Props>) {
         // const chain = await api.rpc.system.chain();
         await api.rpc.chain.subscribeNewHeads((lastHeader) => {
           setBlockNumber(lastHeader.number.toNumber());
-        });
+        }).catch((_)=> {
+          console.log('disconnected from chain')
+        })
         // catch disconnects
         api.on("disconnected", () => {
           setBlockNumber(0);
-        });
+        })
       })();
     }
   });

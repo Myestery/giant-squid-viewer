@@ -62,7 +62,7 @@ npm start
 ```
 
 ## Live Preview
-[https://giant-squid-status-5w6tfytw5q-uc.a.run.app/](https://giant-squid-status-5w6tfytw5q-uc.a.run.app/)
+[https://giant-squid-status.netlify.app/](https://giant-squid-status.netlify.app/)
 
 ## License
 

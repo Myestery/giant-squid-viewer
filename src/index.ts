@@ -1,5 +1,7 @@
 // import "../../styles/index.module.css";
 
+import { GSCoin, GSCoins, GSCoinsMap } from './types/coins';
+
 import Viewer from "./components/viewer";
 
-export { Viewer };
+export { Viewer,GSCoin, GSCoins, GSCoinsMap };
